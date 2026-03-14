@@ -1,0 +1,88 @@
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    text-align: center;
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.game {
+    width: 90%;
+    max-width: 450px;
+    padding: 30px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0px 15px 35px rgba(0,0,0,0.2);
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+}
+
+.flag-container {
+    margin-bottom: 20px;
+}
+
+#flag {
+    width: 100%;
+    max-height: 200px;
+    object-fit: contain;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+#options {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Duas colunas */
+    gap: 12px;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 14px;
+    border: none;
+    background: #3498db;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.1s, background 0.2s;
+    /* Garante que o texto longo não quebre o layout */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60px; 
+}
+
+button:hover {
+    background: #2980b9;
+    transform: scale(1.03);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+#next-btn {
+    margin-top: 25px;
+    background: #2ecc71;
+    width: 100%;
+    font-weight: bold;
+    font-size: 16px;
+    min-height: 50px;
+}
+
+#next-btn:hover {
+    background: #27ae60;
+}
+
+#result {
+    height: 24px; /* Reserva espaço para o texto não "pular" */
+    margin: 15px 0;
+    font-weight: bold;
+    color: #2c3e50;
+}
