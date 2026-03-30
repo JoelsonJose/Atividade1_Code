@@ -62,4 +62,33 @@ function checkAnswer(answer) {
     }
 }
 
+function getMyCountry() {
+    const locationText = document.getElementById("user-location");
+
+    if ("geolocation" in navigator) {
+        navigator.geolocation.getCurrentPosition(async (position) => {
+            const lat = position.coords.latitude;
+            const lon = position.coords.longitude;
+
+            try {
+                const response = await fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${lon}`);
+                const data = await response.json();
+                
+                
+                const countryName = data.address.country;
+                locationText.innerText = `Você está jogando de: ${countryName} 📍`;
+            } catch (error) {
+                locationText.innerText = "Não foi possível detectar seu país.";
+            }
+        }, (error) => {
+            console.error(error);
+            locationText.innerText = "Acesso à localização negado.";
+        });
+    } else {
+        locationText.innerText = "Geolocalização não suportada.";
+    }
+}
+
+
 loadCountries();
+getMyCountry(); 
