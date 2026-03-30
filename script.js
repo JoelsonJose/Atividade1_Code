@@ -76,7 +76,7 @@ function getMyCountry() {
                 
                 
                 const countryName = data.address.country;
-                locationText.innerText = `Você está jogando de: ${countryName} 📍`;
+                locationText.innerText = `Você está jogando de: ${countryName}`;
             } catch (error) {
                 locationText.innerText = "Não foi possível detectar seu país.";
             }
