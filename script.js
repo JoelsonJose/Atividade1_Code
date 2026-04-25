@@ -1,4 +1,4 @@
-const API_URL = 'https://atividade1-code.onrender.com';
+const API_URL = 'https://atividade1-code.onrender.com/api';
 let currentUser = JSON.parse(localStorage.getItem('currentUser'));
 let token = localStorage.getItem('token');
 let activeCharacter = null;
