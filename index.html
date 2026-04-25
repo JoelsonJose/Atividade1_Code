@@ -18,12 +18,18 @@
 </script>
 </head>
 <body>
-    
-    <div class="game">
+    <div class="user-panel" id="user-panel" style="display: none;">
+        <span id="user-info">Aguardando...</span>
+        <button onclick="logout()">Sair</button>
+        <button onclick="toggleCharacterPanel()">Meus Personagens</button>
+    </div>
+
+    <div class="game" id="game-section">
         <h1>Adivinhe o País</h1>
         <p id="user-location" style="font-size: 12px; color: #7f8c8d; margin-bottom: 15px;">Detectando sua localização...</p>
 
         <div class="flag-container">
+            <h3 id="hint-box" style="margin-bottom:10px; color:#f39c12; min-height: 25px;"></h3>
             <img id="flag" src="" alt="Bandeira">
         </div>
 
@@ -32,6 +38,39 @@
         <p id="result"></p>
 
         <button id="next-btn" onclick="newRound()">Próximo</button>
+    </div>
+
+    <!-- Modal Login/Registro -->
+    <div id="auth-modal" class="modal">
+        <div class="modal-content">
+            <h2 id="auth-title">Entrar</h2>
+            <input type="text" id="username" placeholder="Usuário">
+            <input type="password" id="password" placeholder="Senha">
+            <button id="auth-btn" onclick="login()">Entrar</button>
+            <p id="auth-toggle" onclick="toggleAuthMode()">Não tem conta? Registre-se</p>
+        </div>
+    </div>
+
+    <!-- Modal Personagens (CRUD) -->
+    <div id="character-modal" class="modal" style="display: none;">
+        <div class="modal-content large" style="position:relative;">
+            <span onclick="toggleCharacterPanel()" style="position:absolute; top:15px; right:20px; font-size:24px; cursor:pointer; font-weight:bold; color:#777;">&times;</span>
+            <h2>Meus Personagens</h2>
+            
+            <div class="character-form">
+                <input type="hidden" id="char-id">
+                <input type="text" id="char-name" placeholder="Nome do Personagem">
+                <select id="char-style">
+                    <option value="estudioso">Estudioso (Dica: 1ª Letra)</option>
+                    <option value="viajante">Viajante (Dica: Continente)</option>
+                    <option value="explorador">Explorador (Dica: Capital)</option>
+                </select>
+                <input type="color" id="char-color" value="#4facfe">
+                <button onclick="saveCharacter()">Salvar Personagem</button>
+            </div>
+
+            <div id="character-list"></div>
+        </div>
     </div>
 
     <script src="script.js"></script>

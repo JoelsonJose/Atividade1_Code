@@ -83,6 +83,88 @@ button:active {
 #result {
     height: 24px; /* Reserva espaço para o texto não "pular" */
     margin: 15px 0;
-    font-weight: bold;
-    color: #2c3e50;
 }
+
+/* User Panel */
+.user-panel {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-weight: bold;
+    color: #333;
+}
+.user-panel button {
+    min-height: 40px;
+    padding: 5px 15px;
+    font-size: 12px;
+}
+
+/* Modals */
+.modal {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 350px;
+    text-align: center;
+}
+.modal-content.large {
+    max-width: 500px;
+}
+.modal-content input, .modal-content select {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+.modal-content button {
+    width: 100%;
+    margin-top: 10px;
+}
+#auth-toggle {
+    margin-top: 15px;
+    font-size: 13px;
+    color: #3498db;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/* Character List */
+#character-list {
+    margin-top: 20px;
+    text-align: left;
+    max-height: 250px;
+    overflow-y: auto;
+}
+.char-card {
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.char-actions button {
+    min-height: 30px;
+    padding: 5px 10px;
+    font-size: 11px;
+    margin-left: 5px;
+}
